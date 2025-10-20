@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbaltaza <dbaltaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 12:35:15 by dbaltaza          #+#    #+#             */
-/*   Updated: 2025/10/20 15:35:36 by dbaltaza         ###   ########.fr       */
+/*   Created: 2025/10/20 15:43:41 by dbaltaza          #+#    #+#             */
+/*   Updated: 2025/10/20 15:55:24 by dbaltaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	i;
-	size_t	j;
+	unsigned char	*alloc;
+	size_t			total;
+	size_t			i;
 
-	i = 0;
-	if (*little == '\0')
-		return ((char *)big);
-	while (i < len && big[i])
+	total = nmemb * size;
+	alloc = (unsigned char *)malloc(total);
+	if (alloc == NULL)
+		return (NULL);
+	else
 	{
-		j = 0;
-		while (big[i + j] == little[j] && little[j] && (i + j) < len)
-			j++;
-		if (little[j] == '\0')
-			return ((char *)(big + i));
-		i++;
+		i = 0;
+		while (i < total)
+		{
+			alloc[i] = 0;
+			i++;
+		}
 	}
-	return (NULL);
+	return ((void *)alloc);
 }
