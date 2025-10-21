@@ -6,7 +6,7 @@
 /*   By: dbaltaza <dbaltaza@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 19:05:00 by dbaltaza          #+#    #+#             */
-/*   Updated: 2025/10/16 19:07:40 by dbaltaza         ###   ########.fr       */
+/*   Updated: 2025/10/20 22:43:00 by dbaltaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int i;
-	int number;
-	int sinais;
+	int	i;
+	int	number;
+	int	sinais;
 
 	i = 0;
 	number = 0;
@@ -37,4 +37,3 @@ int	ft_atoi(const char *str)
 	}
 	return (number * sinais);
 }
-

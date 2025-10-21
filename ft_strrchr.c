@@ -6,7 +6,7 @@
 /*   By: dbaltaza <dbaltaza@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 17:31:37 by dbaltaza          #+#    #+#             */
-/*   Updated: 2025/10/20 19:41:54 by dbaltaza         ###   ########.fr       */
+/*   Updated: 2025/10/20 22:36:29 by dbaltaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,3 @@ char	*ft_strrchr(const char *s, int c)
 		return ((char *)s);
 	return (last);
 }
-
-

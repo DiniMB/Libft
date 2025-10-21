@@ -6,7 +6,7 @@
 /*   By: dbaltaza <dbaltaza@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 18:45:48 by dbaltaza          #+#    #+#             */
-/*   Updated: 2025/10/20 19:51:12 by dbaltaza         ###   ########.fr       */
+/*   Updated: 2025/10/20 22:45:07 by dbaltaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 size_t	ft_strlen(const char *s)
 {
-	size_t	i = 0;
+	size_t	i;
+
+	i = 0;
 	while (s[i])
 		i++;
 	return (i);
@@ -44,4 +46,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	sub[i] = '\0';
 	return (sub);
 }
-

@@ -6,7 +6,7 @@
 /*   By: dbaltaza <dbaltaza@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 19:20:32 by dbaltaza          #+#    #+#             */
-/*   Updated: 2025/10/16 19:26:46 by dbaltaza         ###   ########.fr       */
+/*   Updated: 2025/10/20 22:34:11 by dbaltaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	ft_putchar_fd(char c, int fd)
 	write(fd, &c, 1);
 }
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
-	long int nb;
+	long int	nb;
 
 	nb = n;
 	if (nb < 0)
@@ -33,6 +33,6 @@ void ft_putnbr_fd(int n, int fd)
 	if (nb > 9)
 	{
 		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);	
+		ft_putnbr_fd(nb % 10, fd);
 	}
 }
