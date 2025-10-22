@@ -23,12 +23,6 @@ typedef	struct	s_list
 	struct s_list	*next;
 }					t_list;
 
-typedef struct	s_split_next
-{
-	size_t	start;
-	size_t	length;
-}			t_split_next;
-
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
