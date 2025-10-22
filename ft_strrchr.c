@@ -6,7 +6,7 @@
 /*   By: dbaltaza <dbaltaza@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/17 17:31:37 by dbaltaza          #+#    #+#             */
-/*   Updated: 2025/10/20 22:36:29 by dbaltaza         ###   ########.fr       */
+/*   Updated: 2025/10/22 18:42:35 by dbaltaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*last;
+	int	i;
 
-	last = NULL;
-	while (*s)
+	i = 0;
+	while (s[i])
+		i++;
+	while (i >= 0)
 	{
-		if (*s == (unsigned char)c)
-			last = (char *)s;
-		s++;
+		if (s[i] == (char)c)
+			return ((char *)(s + i));
+		i--;
 	}
-	if ((unsigned char)c == '\0')
-		return ((char *)s);
-	return (last);
+	return (NULL);
 }
