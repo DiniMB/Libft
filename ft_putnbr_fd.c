@@ -6,16 +6,11 @@
 /*   By: dbaltaza <dbaltaza@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 19:20:32 by dbaltaza          #+#    #+#             */
-/*   Updated: 2025/10/21 13:18:52 by dbaltaza         ###   ########.fr       */
+/*   Updated: 2025/10/22 13:46:32 by dbaltaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
 
 void	ft_putnbr_fd(int n, int fd)
 {

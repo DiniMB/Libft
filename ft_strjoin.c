@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbaltaza <dbaltaza@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 18:45:48 by dbaltaza          #+#    #+#             */
-/*   Updated: 2025/10/22 13:47:28 by dbaltaza         ###   ########.fr       */
+/*   Created: 2025/10/22 12:42:19 by dbaltaza          #+#    #+#             */
+/*   Updated: 2025/10/22 15:07:38 by dbaltaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*sub;
+	char	*join;
 	size_t	i;
+	size_t	j;
 
-	if (!s || start >= ft_strlen(s))
-	{
-		sub = malloc(1);
-		if (!sub)
-			return (NULL);
-		sub[0] = '\0';
-		return (sub);
-	}
-	if (len > ft_strlen(s + start))
-		len = ft_strlen(s + start);
-	sub = malloc(len + 1);
-	if (!sub)
-		return (NULL);
 	i = 0;
-	while (i < len)
-		sub[i++] = s[start++];
-	sub[i] = '\0';
-	return (sub);
+	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	join = malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
+	if (join == NULL)
+		return (NULL);
+	while (s1[i])
+	{
+		join[i] = s1[i];
+		i++;
+	}
+	while (s2[j])
+	{
+		join[i] = s2[j];
+		i++;
+		j++;
+	}
+	join[i] = '\0';
+	return (join);
 }

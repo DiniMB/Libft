@@ -1,38 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbaltaza <dbaltaza@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/20 18:45:48 by dbaltaza          #+#    #+#             */
-/*   Updated: 2025/10/22 13:47:28 by dbaltaza         ###   ########.fr       */
+/*   Created: 2025/10/21 14:01:22 by dbaltaza          #+#    #+#             */
+/*   Updated: 2025/10/22 13:43:14 by dbaltaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+static int	get_size(int n)
 {
-	char	*sub;
-	size_t	i;
+	int	size;
 
-	if (!s || start >= ft_strlen(s))
+	size = 0;
+	if (n <= 0)
+		size++;
+	while (n != 0)
 	{
-		sub = malloc(1);
-		if (!sub)
-			return (NULL);
-		sub[0] = '\0';
-		return (sub);
+		n /= 10;
+		size++;
 	}
-	if (len > ft_strlen(s + start))
-		len = ft_strlen(s + start);
-	sub = malloc(len + 1);
-	if (!sub)
+	return (size);
+}
+
+char	*ft_itoa(int n)
+{
+	int		size;
+	char	*str;
+	long	nb;
+
+	size = get_size(n);
+	str = malloc(sizeof(char) * (size + 1));
+	nb = n;
+	if (!str)
 		return (NULL);
-	i = 0;
-	while (i < len)
-		sub[i++] = s[start++];
-	sub[i] = '\0';
-	return (sub);
+	str[size] = '\0';
+	if (nb == 0)
+		str[0] = '0';
+	if (nb < 0)
+	{
+		str[0] = '-';
+		nb = -nb;
+	}
+	while (nb > 0)
+	{
+		str[--size] = (nb % 10) + '0';
+		nb /= 10;
+	}
+	return (str);
 }
