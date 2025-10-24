@@ -6,7 +6,7 @@
 /*   By: dbaltaza <dbaltaza@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/16 16:14:41 by dbaltaza          #+#    #+#             */
-/*   Updated: 2025/10/22 19:26:09 by dbaltaza         ###   ########.fr       */
+/*   Updated: 2025/10/24 16:49:10 by dbaltaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdio.h>
 # include <stdlib.h>
 
-typedef	struct	s_list
+typedef struct	s_list
 {
 	void			*content;
 	struct s_list	*next;
@@ -59,5 +59,10 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	**ft_split(char const *s, char c);
 
 t_list	*ft_lstnew(void *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstzie(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
 
 #endif

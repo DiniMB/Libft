@@ -1,19 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dbaltaza <dbaltaza@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/23 18:51:41 by dbaltaza          #+#    #+#             */
-/*   Updated: 2025/10/24 16:34:01 by dbaltaza         ###   ########.fr       */
+/*   Created: 2025/10/24 16:23:58 by dbaltaza          #+#    #+#             */
+/*   Updated: 2025/10/24 16:32:14 by dbaltaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+int	ft_lstzie(t_list *lst)
 {
-	new->next = *lst;
-	*lst = new;
+	int	count;
+
+	count = 0;
+	while (lst)
+	{
+		count++;
+		lst = lst->next;
+	}
+	return (count);
 }
