@@ -6,7 +6,7 @@
 #    By: dbaltaza <dbaltaza@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/16 19:09:05 by dbaltaza          #+#    #+#              #
-#    Updated: 2025/10/25 14:39:52 by dbaltaza         ###   ########.fr        #
+#    Updated: 2025/10/25 15:09:51 by dbaltaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,8 +35,6 @@ all: 			$(NAME)
 
 %.o: %.c 		libft.h
 					$(CC) $(CFLAGS) -c $< -o $@
-
-
 
 $(NAME): 		$(OBJS)
 				ar rcs $(NAME) $(OBJS)
