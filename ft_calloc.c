@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dbaltaza <dbaltaza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: dbaltaza <dbaltaza@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:43:41 by dbaltaza          #+#    #+#             */
-/*   Updated: 2025/10/20 15:55:24 by dbaltaza         ###   ########.fr       */
+/*   Updated: 2025/10/25 15:00:53 by dbaltaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,13 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned char	*alloc;
-	size_t			total;
-	size_t			i;
+	void	*ptr;
 
-	total = nmemb * size;
-	alloc = (unsigned char *)malloc(total);
-	if (alloc == NULL)
+	if (size && nmemb > SIZE_MAX / size)
 		return (NULL);
-	else
-	{
-		i = 0;
-		while (i < total)
-		{
-			alloc[i] = 0;
-			i++;
-		}
-	}
-	return ((void *)alloc);
+	ptr = malloc(nmemb * size);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, nmemb * size);
+	return (ptr);
 }

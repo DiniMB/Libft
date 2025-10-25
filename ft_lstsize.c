@@ -6,13 +6,13 @@
 /*   By: dbaltaza <dbaltaza@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 16:23:58 by dbaltaza          #+#    #+#             */
-/*   Updated: 2025/10/24 16:32:14 by dbaltaza         ###   ########.fr       */
+/*   Updated: 2025/10/25 14:43:17 by dbaltaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstzie(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	count;
 

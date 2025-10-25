@@ -6,7 +6,7 @@
 #    By: dbaltaza <dbaltaza@student.42lisboa.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/10/16 19:09:05 by dbaltaza          #+#    #+#              #
-#    Updated: 2025/10/24 16:46:37 by dbaltaza         ###   ########.fr        #
+#    Updated: 2025/10/25 14:39:52 by dbaltaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,9 +25,9 @@ SRCS			=	ft_isalnum.c ft_isprint.c ft_memcmp.c ft_putchar_fd.c ft_split.c\
 
 OBJS 			= $(SRCS:.c=.o)
 
-BONUS			=	ft_lstadd_back.c ft_lstadd_front.c\
-					ft_lstdelone.c ft_lstlast.c \
-					ft_lstnew.c ft_lstsize.c
+BONUS			=	ft_lstadd_back.c ft_lstadd_front.c ft_lstclear.c \
+					ft_lstdelone.c ft_lstlast.c ft_lstmap.c \
+					ft_lstnew.c ft_lstsize.c ft_lstiter.c
 
 BONUS_OBJS		= $(BONUS:.c=.o)
 
