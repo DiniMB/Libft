@@ -6,13 +6,13 @@
 /*   By: dbaltaza <dbaltaza@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:11:18 by dbaltaza          #+#    #+#             */
-/*   Updated: 2025/10/22 19:54:07 by dbaltaza         ###   ########.fr       */
+/*   Updated: 2025/10/27 13:36:41 by dbaltaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	count_words(const char *s, char c)
+static int	count_words(const char *s, char c)
 {
 	int	count;
 
@@ -29,7 +29,7 @@ static	int	count_words(const char *s, char c)
 	return (count);
 }
 
-static	char	*word_copy(const char *s, char c)
+static char	*word_copy(const char *s, char c)
 {
 	char	*w;
 	int		len;
@@ -51,6 +51,19 @@ static	char	*word_copy(const char *s, char c)
 	return (w);
 }
 
+static void	free_split(char **res, int count)
+{
+	int	i;
+
+	i = 0;
+	while (i < count)
+	{
+		free(res[i]);
+		i++;
+	}
+	free(res);
+}
+
 char	**ft_split(const char *s, char c)
 {
 	char	**res;
@@ -68,11 +81,14 @@ char	**ft_split(const char *s, char c)
 			s++;
 		if (*s)
 		{
-			res[i++] = word_copy(s, c);
+			res[i] = word_copy(s, c);
+			if (!res[i])
+				return (free_split(res, i), NULL);
+			i++;
 			while (*s && *s != c)
 				s++;
 		}
 	}
-	res[i] = (NULL);
+	res[i] = NULL;
 	return (res);
 }
