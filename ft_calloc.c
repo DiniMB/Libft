@@ -6,7 +6,7 @@
 /*   By: dbaltaza <dbaltaza@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 15:43:41 by dbaltaza          #+#    #+#             */
-/*   Updated: 2025/10/25 15:00:53 by dbaltaza         ###   ########.fr       */
+/*   Updated: 2025/10/27 14:09:00 by dbaltaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*ptr;
 
-	if (size && nmemb > SIZE_MAX / size)
+	if (nmemb != 0 && size > SIZE_MAX / nmemb)
 		return (NULL);
 	ptr = malloc(nmemb * size);
 	if (!ptr)

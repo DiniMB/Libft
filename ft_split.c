@@ -6,7 +6,7 @@
 /*   By: dbaltaza <dbaltaza@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 15:11:18 by dbaltaza          #+#    #+#             */
-/*   Updated: 2025/10/27 13:36:41 by dbaltaza         ###   ########.fr       */
+/*   Updated: 2025/10/27 14:03:27 by dbaltaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,3 +92,21 @@ char	**ft_split(const char *s, char c)
 	res[i] = NULL;
 	return (res);
 }
+
+/* int	main(void)
+{
+	char	**result;
+	int		i;
+
+	result = ft_split("hello world 42", ' ');
+	
+	i = 0;
+	while (result[i])
+	{
+		printf("%s\n", result[i]);
+		free(result[i]);
+		i++;
+	}
+	free(result);
+	return (0);
+} */
