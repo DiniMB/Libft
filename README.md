@@ -1,48 +1,81 @@
-# Libft
+<h1 align="center">Libft 42 Lisboa 📚 </h1>
 
-O projeto Libft consiste em recriar algumas funções padrões existentes em C (`libc`). Como nos projetos da 42 são proibido usar algumas funções padrões do C, esse projeto foi pensado para que desenvolvessemos as nossas próprias funções e a usemos no futuro.
-
-
-##### Principais aprendizados:
-
-- Debug code foi a habilidade que mais aprendi nesse projeto
-
-- Resiliência foi importante
-
-- Aprendi a me organizar e dividir o projeto em etapas
-- Aprendi o famoso RTFM :mega:
-
-No bonus eu aprimorei meu conhecimento em estrutura de dados.
-
----
-
-##### Technical considerations
-
-- It is forbidden to declare global variables.
-- If you need subfunctions to write a complex function, you should define these subfunctions as `static` to avoid publishing them with your library. It would be a good habit to do this in your future projects as well.
--  Submit all files in the root of your repository.
--  It is forbidden to submit unused files.
--  Every .c must compile with flags.
--  You must use the command ar to create your library, using the command libtool is forbidden.
-
----
-
-##### Bonus
-
-If you completed the mandatory part, you’ll enjoy taking it further. 
-
-You can see this last section as Bonus Points. Having functions to manipulate memory and strings is very useful, but you’ll soon discover that having functions to manipulate lists is even more useful.
-
----
-
-Execução:
-
-```shell
-make
+```c
+            /* ************************************************************************** */
+            /*                                                                            */
+            /*                                                        :::      ::::::::   */
+            /*   Libft                                             :+:      :+:    :+:   */
+            /*                                                    +:+ +:+         +:+     */
+            /*   By: dbaltaza <marvin@42.fr>                    +#+  +:+       +#+        */
+            /*                                                +#+#+#+#+#+   +#+           */
+            /*   Created: 2025/10/30 by dbaltaza                  #+#    #+#             */
+            /*   Updated: 2025/10/30 by dbaltaza                 ###   ########.fr       */
+            /*                                                                            */
+            /* ************************************************************************** */
 ```
 
-Execução bonus:
+## 📋 Sobre o Projeto
 
-```shell
-make bonus
+Criação da tua própria biblioteca de funções C que será usada em projetos futuros.
+
+**Nota Final:** 125/125
+
+---
+
+## 📊 Funções Implementadas
+
+### Part 1 - Libc Functions (23/23)
+Reimplementação de funções standard da libc.
+
+`isalpha` `isdigit` `isalnum` `isascii` `isprint` `strlen` `memset` `bzero` `memcpy` `memmove` `strlcpy` `strlcat` `toupper` `tolower` `strchr` `strrchr` `strncmp` `memchr` `memcmp` `strnstr` `atoi` `calloc` `strdup`
+
+### Part 2 - Additional Functions (11/11)
+Funções úteis não presentes na libc.
+
+`substr` `strjoin` `strtrim` `split` `itoa` `strmapi` `striteri` `putchar_fd` `putstr_fd` `putendl_fd` `putnbr_fd`
+
+### Bonus - Linked Lists (9/9)
+Manipulação de listas encadeadas.
+
+`lstnew` `lstadd_front` `lstsize` `lstlast` `lstadd_back` `lstdelone` `lstclear` `lstiter` `lstmap`
+
+---
+
+## 🛠️ Compilação
+
+```bash
+make            # Compila a biblioteca
+make bonus      # Compila com bonus
+make clean      # Remove objetos
+make fclean     # Remove tudo
+make re         # Recompila
 ```
+
+---
+
+## 💡 Pontos Importantes
+
+✅ Todas as funções passam na Norminette  
+✅ Sem memory leaks (testado com valgrind)  
+✅ Proteção de malloc em todas as alocações  
+✅ Makefile não recompila ficheiros já compilados  
+✅ Bonus só conta se mandatory perfeito
+
+---
+
+## 🧪 Como Testar
+
+```bash
+# Tripouille Tester
+git clone https://github.com/Tripouille/libftTester.git
+cd libftTester && make
+
+# Verificar memory leaks
+valgrind --leak-check=full ./your_test
+```
+
+---
+
+**Made by:** dbaltaza  
+**Campus:** 42 Lisboa  
+**Year:** 2025
