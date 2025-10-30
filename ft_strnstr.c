@@ -6,7 +6,7 @@
 /*   By: dbaltaza <dbaltaza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/20 12:35:15 by dbaltaza          #+#    #+#             */
-/*   Updated: 2025/10/20 15:35:36 by dbaltaza         ###   ########.fr       */
+/*   Updated: 2025/10/28 12:57:32 by dbaltaza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	}
 	return (NULL);
 }
+
+/*int main(void)
+{
+	char *s = "eusouodinis";
+	char *s2 = "souo";
+
+	printf("%s", ft_strnstr(s, s2, 11));
+}*/
