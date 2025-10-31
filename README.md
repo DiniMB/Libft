@@ -18,7 +18,7 @@
 
 Criação da tua própria biblioteca de funções C que será usada em projetos futuros.
 
-**Nota Final:** 125/125
+**Nota Final:** 125/100
 
 ---
 
